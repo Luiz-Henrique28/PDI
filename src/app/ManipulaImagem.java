@@ -16,17 +16,17 @@ public class ManipulaImagem {
         }
     }
     public static void exibirImagens(BufferedImage ...imagens) {
-        JFrame painel = new JFrame("exibição de imagem");
+        JFrame frame = new JFrame("exibição de imagem");
+        JPanel painel = new JPanel(new FlowLayout());
 
         for(BufferedImage imgs : imagens){
-            painel.getContentPane().add(new JLabel(new ImageIcon(imgs)));
+            painel.add(new JLabel(new ImageIcon(imgs)));
         }
 
-        painel.getContentPane().setLayout(new FlowLayout());
-        painel.pack();
-
-        painel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        painel.setVisible(true);
+        frame.getContentPane().add(painel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
     public static void salvarImagem(BufferedImage imagem) {
         try {

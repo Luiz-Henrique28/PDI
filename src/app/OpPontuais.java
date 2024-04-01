@@ -296,14 +296,14 @@ public class OpPontuais {
                 int blue = cor.getBlue();
 
                 float Y = ((0.299f * red) + (0.587f * green) + (0.114f * blue));
-                float I = ((0.596f * red) + (-0.257f * green) + (-0.321f * blue));
-                float Q = ((0.212f * red) + (-0.523f * green) + (0.311f * blue));
+                float I = ((0.596f * red) - (0.274f * green) - (0.322f * blue));
+                float Q = ((0.211f * red) - (0.523f * green) + (0.312f * blue));
 
                 Y += valorAumento;
 
-                int novoRed = tratarLimitesRGB((int) (Y + 0.956f*I + 0.621f*Q));
-                int novoGreen = tratarLimitesRGB((int) (Y - 0.2721f*I - 0.647f*Q));
-                int novoBlue = tratarLimitesRGB((int) (Y - 1.106f*I + 1.703f*Q));
+                int novoRed = tratarLimitesRGB((int) ((1.000*Y) + (0.956f*I) + (0.621f*Q)));
+                int novoGreen = tratarLimitesRGB((int) ((1.000*Y) - (0.272f*I) - (0.647f*Q)));
+                int novoBlue = tratarLimitesRGB((int) ((1.000*Y) - (1.106f*I) + (1.703f*Q)));
 
                 int novaCor = new Color(novoRed, novoGreen, novoBlue).getRGB();
                 novaImagem.setRGB(j, i, novaCor);
@@ -329,14 +329,14 @@ public class OpPontuais {
                 int blue = cor.getBlue();
 
                 float Y = ((0.299f * red) + (0.587f * green) + (0.114f * blue));
-                float I = ((0.596f * red) + (-0.257f * green) + (-0.321f * blue));
-                float Q = ((0.212f * red) + (-0.523f * green) + (0.311f * blue));
+                float I = ((0.596f * red) - (0.274f * green) - (0.322f * blue));
+                float Q = ((0.211f * red) - (0.523f * green) + (0.312f * blue));
 
                 Y *= valorAumento;
 
-                int novoRed = tratarLimitesRGB((int) (Y + 0.956f*I + 0.621f*Q));
-                int novoGreen = tratarLimitesRGB((int) (Y - 0.2721f*I - 0.647f*Q));
-                int novoBlue = tratarLimitesRGB((int) (Y - 1.106f*I + 1.703f*Q));
+                int novoRed = tratarLimitesRGB((int) ((1.000*Y) + (0.956f*I) + (0.621f*Q)));
+                int novoGreen = tratarLimitesRGB((int) ((1.000*Y) - (0.272f*I) - (0.647f*Q)));
+                int novoBlue = tratarLimitesRGB((int) ((1.000*Y) - (1.106f*I) + (1.703f*Q)));
 
                 int novaCor = new Color(novoRed, novoGreen, novoBlue).getRGB();
                 novaImagem.setRGB(j, i, novaCor);
@@ -362,14 +362,14 @@ public class OpPontuais {
                 int blue = cor.getBlue();
 
                 float Y = ((0.299f * red) + (0.587f * green) + (0.114f * blue));
-                float I = ((0.596f * red) + (-0.257f * green) + (-0.321f * blue));
-                float Q = ((0.212f * red) + (-0.523f * green) + (0.311f * blue));
+                float I = ((0.596f * red) - (0.274f * green) - (0.322f * blue));
+                float Q = ((0.211f * red) - (0.523f * green) + (0.312f * blue));
 
                 Y = 255 - Y;
 
-                int novoRed = tratarLimitesRGB((int) (Y + 0.956f*I + 0.621f*Q));
-                int novoGreen = tratarLimitesRGB((int) (Y - 0.2721f*I - 0.647f*Q));
-                int novoBlue = tratarLimitesRGB((int) (Y - 1.106f*I + 1.703f*Q));
+                int novoRed = tratarLimitesRGB((int) ((1.000*Y) + (0.956f*I) + (0.621f*Q)));
+                int novoGreen = tratarLimitesRGB((int) ((1.000*Y) - (0.272f*I) - (0.647f*Q)));
+                int novoBlue = tratarLimitesRGB((int) ((1.000*Y) - (1.106f*I) + (1.703f*Q)));
 
                 int novaCor = new Color(novoRed, novoGreen, novoBlue).getRGB();
                 novaImagem.setRGB(j, i, novaCor);
